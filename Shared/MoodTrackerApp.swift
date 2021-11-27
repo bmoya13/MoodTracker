@@ -2,7 +2,7 @@
 //  MoodTrackerApp.swift
 //  Shared
 //
-//  Created by bmoya1301 on 11/26/21.
+//  Created by Skai Fu on 11/26/21.
 //
 
 import SwiftUI
@@ -11,7 +11,7 @@ import SwiftUI
 struct MoodTrackerApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeScreen()
         }
     }
 }
