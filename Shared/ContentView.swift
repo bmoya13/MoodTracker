@@ -2,21 +2,35 @@
 //  ContentView.swift
 //  Shared
 //
-//  Created by bmoya1301 on 11/26/21.
+//
 //
 
 import SwiftUI
 
-struct ContentView: View {
+struct HomeScreen: View {
     var body: some View {
-        Text("Welcome to IMood!")
+        Text("Welcome to the Mood Tracker App!")
             .padding()
-            .background(/*@START_MENU_TOKEN@*//*@PLACEHOLDER=View@*/Color.gray/*@END_MENU_TOKEN@*/)
+        Button("Get Started") {
+            NavigationLink(destination: AddMood()) {
+                Text("Hello")
+            }
+        }
+        .frame(width: /*@START_MENU_TOKEN@*/250.0/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100.0/*@END_MENU_TOKEN@*/)
+    }
+}
+
+struct AddMood: View {
+    var body: some View {
+        Text("Add your mood here")
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        Group {
+            HomeScreen()
+            AddMood()
+        }
     }
 }
