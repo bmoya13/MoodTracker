@@ -12,15 +12,28 @@ struct HomeScreen: View {
     
     var body: some View {
         NavigationView {
-            VStack{
-                NavigationLink(destination: AddMood(), isActive: $showAddMood, label: EmptyView.init)
+            ZStack {
                 
+            Image("background")
+            
+                VStack {
+        
+                NavigationLink(destination: AddMood(), isActive: $showAddMood, label: EmptyView.init)
+               
                 Text("Welcome to the Mood Tracker App!")
+                    .padding()
+                    .font(.system(size: 25))
+                    .offset(y: -200)
                 
                 Button("Get Started") {
                     showAddMood = true
                 }
+                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                
             }
+                
+            }
+            
         }
     }
 }
