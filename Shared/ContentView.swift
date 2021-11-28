@@ -8,15 +8,20 @@
 import SwiftUI
 
 struct HomeScreen: View {
+    @State var showAddMood = false
+    
     var body: some View {
-        Text("Welcome to the Mood Tracker App!")
-            .padding()
-        Button("Get Started") {
-            NavigationLink(destination: AddMood()) {
-                Text("Hello")
+        NavigationView {
+            VStack{
+                NavigationLink(destination: AddMood(), isActive: $showAddMood, label: EmptyView.init)
+                
+                Text("Welcome to the Mood Tracker App!")
+                
+                Button("Get Started") {
+                    showAddMood = true
+                }
             }
         }
-        .frame(width: /*@START_MENU_TOKEN@*/250.0/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100.0/*@END_MENU_TOKEN@*/)
     }
 }
 
